@@ -1,0 +1,42 @@
+.twitter__contents 
+  .twitter__block
+    %figure
+      = image_tag 'hero.jpg', class: 'icon-photo'
+    .twitter__block-text
+      .name
+        = tweet.user.name
+        %span.name_reply
+          @usa_tan
+      .date
+        = tweet.created_at.strftime("%Y年%m月%d日 %H時%M分")
+      .text
+        = tweet.text
+    .menu
+      %label{ for: "menu_bar01" }
+        = icon('fas', 'ellipsis-h')
+      %input.accordion{:type => "checkbox", :id => "menu_bar01" }
+      %ul#links01
+        %li
+          %a{ href: ''}
+            Link01
+        %li
+          %a{ href: ''}
+            Link01
+        %li
+          %a{ href: ''}
+            Link01
+    
+    
+
+
+          
+
+
+
+
+
+
+
+
+
+
