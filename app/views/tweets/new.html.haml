@@ -1,0 +1,13 @@
+.contents 
+  .container
+    %h
+      投稿する
+    = form_with model: @tweet, local: true do |f|
+      .form-contents
+        .form-contents__text
+          = f.text_field :text, class: 'text', placeholder: 'type a message'
+          = f.label :image, class: 'form-contents__text--img' do
+            = icon('far', 'image', class: 'input-box__image')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'send'
+      

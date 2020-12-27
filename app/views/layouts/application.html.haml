@@ -13,7 +13,7 @@
       .top_bar__memoring
         MemoRing
       .top_bar__menu
-        %a{ href: '', class: 'top_bar__menu--timeline' }
+        =link_to tweets_path, class: "top_bar__menu--timeline" do
           TimeLine
         %a{ href: '', class: 'top_bar__menu--chat' }
           Chat

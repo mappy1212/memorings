@@ -2,7 +2,9 @@
   box-sizing: border-box;
 }
 
-
+.wrapper{
+  display: flex;
+}
 
 .top_bar{
   background-color: #253141;
@@ -154,8 +156,40 @@
   height: 90vh;
   width: 75vw;
   border: 1px solid black;
-  .tweet_index__timeline{
-
-  }
+  overflow: scroll;
 }
 
+.tweet{
+  border: 5px solid  #67c5ff;
+  text-align: center;
+  &__info{
+    display: flex;
+    justify-content: space-around;
+      &--photo{
+        .icon{
+          height: 30px;
+          width: 30px;
+        }
+
+      }
+      &--user{
+
+
+      }
+    &--time{
+
+    }
+
+
+  }
+  &__text{
+    .Tweet__text{
+
+
+    }
+   .Tweet__image{
+     width: 300px;
+
+   }
+  }
+}
