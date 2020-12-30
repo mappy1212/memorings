@@ -17,7 +17,7 @@
           TimeLine
         %a{ href: '', class: 'top_bar__menu--chat' }
           Chat
-        %a{ href: '', class: 'top_bar__menu--diary' }
+        = link_to user_path(current_user.id), class: "top_bar__menu--diary" do
           Diary
       .top_bar__user
         .top_bar__user--icon
