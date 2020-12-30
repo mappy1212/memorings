@@ -4,7 +4,8 @@
       = image_tag 'hero.jpg', class: 'icon-photo'
     .twitter__block-text
       .name
-        = tweet.user.name
+        = link_to user_path(tweet.user.id), class: "top_bar__menu--diary" do
+          = tweet.user.name
         %span.name_reply
           @usa_tan
       .date
@@ -12,20 +13,26 @@
       .text
         = tweet.text
     .menu
+      .comment-btn
+        = icon('far', 'comment')
       %label{ for: "menu_bar01" }
         = icon('fas', 'ellipsis-h')
       %input.accordion{:type => "checkbox", :id => "menu_bar01" }
       %ul#links01
         %li
-          %a{ href: ''}
-            Link01
-        %li
-          %a{ href: ''}
-            Link01
-        %li
-          %a{ href: ''}
-            Link01
-    
+          =link_to tweet_path(tweet.id), class: "a", method: :delete do
+            削除
+            = icon('far', 'trash-alt')
+        - if user_signed_in? && current_user.id == tweet.user_id
+          %li
+            =link_to edit_tweet_path(tweet.id), class: "a", method: :get do
+              編集
+              = icon('fas', 'highlighter')
+          %li
+            =link_to tweet_path(tweet.id), class: "a", method: :get do
+              詳細
+              = icon('far', 'chart-bar')
+      
     
 
 
