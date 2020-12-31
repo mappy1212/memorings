@@ -13,17 +13,21 @@
       .top_bar__memoring
         MemoRing
       .top_bar__menu
-        =link_to tweets_path, class: "top_bar__menu--timeline" do
-          TimeLine
-        %a{ href: '', class: 'top_bar__menu--chat' }
-          Chat
-        = link_to user_path(current_user.id), class: "top_bar__menu--diary" do
-          Diary
-      .top_bar__user
-        .top_bar__user--icon
-          = image_tag 'hero.jpg', class: 'icon-photo'
-        .top_bar__user--name
-          = current_user.name
+        - if user_signed_in?
+          =link_to tweets_path, class: "top_bar__menu--timeline" do
+            TimeLine
+          %a{ href: '', class: 'top_bar__menu--chat' }
+            Chat
+          = link_to user_path(current_user.id), class: "top_bar__menu--diary" do
+            Diary
+        - if user_signed_in?
+          .top_bar__user
+            .top_bar__user--icon
+              = image_tag 'hero.jpg', class: 'icon-photo'
+            .top_bar__user--name
+              = current_user.name
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
+          = icon('fas', 'user-slash')
       .menu-trigger
         %span
         %span
