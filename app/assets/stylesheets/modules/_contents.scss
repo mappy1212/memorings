@@ -154,9 +154,10 @@ $baseColor:   #58aeed; //ベースカラー
           }
 
           .text {
-
             margin: 5px 0;
-
+            .tweet__image{
+              height: 300px;
+            }
             .in-pict img{
               border-radius: 20px;
               -webkit-border-radius: 20px;
@@ -174,6 +175,12 @@ $baseColor:   #58aeed; //ベースカラー
         }
         .menu {
           height: 5vh;
+          .comment-btn{
+            display: flex;
+            .heart{
+              color:red
+            }
+          }
           label{
             width: 80px;
             text-align: center;
