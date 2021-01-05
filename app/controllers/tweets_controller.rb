@@ -11,6 +11,8 @@ class TweetsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @tweet.comments.includes(:user)
+    @like = Like.new
+    @tweet = Tweet.find(params[:id])
   end
 
   def new
@@ -36,7 +38,7 @@ class TweetsController < ApplicationController
   end
 
   def search
-    @tweets = Tweet.search(params[:keyword])
+    @tweets = Tweet.search(params[:keyword]).order("created_at DESC")
   end
  
   

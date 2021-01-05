@@ -7,14 +7,24 @@
         = link_to user_path(tweet.user.id), class: "top_bar__menu--diary" do
           = tweet.user.name
         %span.name_reply
-          @usa_tan
+          @
+          = tweet.user.nickname
       .date
         = tweet.created_at.strftime("%Y年%m月%d日 %H時%M分")
       .text
-        = tweet.text
+        - if tweet.text.present?
+          %p.Tweet__text
+            = tweet.text
+        = image_tag tweet.image.url, class: 'tweet__image' if tweet.image.present?
+
     .menu
       .comment-btn
-        = icon('far', 'comment')
+        =link_to tweet_path(tweet.id), class: "a", method: :get do
+          = icon('far', 'heart', class: "heart")
+          = tweet.liked_users.count
+        =link_to tweet_path(tweet.id), class: "a", method: :get do
+          = icon('far', 'comments')
+          = tweet.comments.count
       %label{ for: "menu_bar01" }
         = icon('fas', 'ellipsis-h')
       %input.accordion{:type => "checkbox", :id => "menu_bar01" }

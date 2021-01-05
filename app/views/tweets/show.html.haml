@@ -1,13 +1,53 @@
-.container
-  - if user_signed_in?
-    = form_with model: [@tweet, @comment], local: true do |f| 
-      = f.text_field :text, class: 'text', placeholder: 'type a message'
-      = f.label :image, class: 'form-contents__text--img' do
-        = icon('far', 'image', class: 'input-box__image')
-        = f.file_field :image, class: 'hidden'
-      = f.submit 'Send', class: 'send'
-  - else 
-    %strong
-      %p
-        ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
-    
+.wrapper
+  = render "side_bar"
+  .tweet_index
+    .twitter__container
+      .twitter__title
+        TimeLine
+        = icon('far', 'comment-alt')
+        =link_to new_tweet_path, class: "tweet__direct" do
+          ツイートする
+          = icon('far', 'edit', class: 'input-box__image')
+      = form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form| 
+        = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" 
+        = form.submit "検索", class: "search-btn" 
+      .tweet_all  
+        = render @tweet
+        .container
+          - if user_signed_in?
+            = form_with model: [@tweet, @comment], local: true do |f| 
+              = f.text_field :text, class: 'text', placeholder: 'type a message'
+              = f.label :image, class: 'form-contents__text--img' do
+                = icon('far', 'image', class: 'input-box__image')
+                = f.file_field :image, class: 'hidden'
+              = f.submit 'Send', class: 'send'
+          - else 
+            %strong
+              %p
+                ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+
+          %h4
+            コメント一覧
+            - @comments.each do |comment| 
+              %p
+                %strong
+                  = link_to comment.user.name, "/users/#{comment.user_id}" 
+                  = comment.text 
+                
+
+        %h3
+          いいね件数
+          = @tweet.likes.count
+        - if current_user.already_liked?(@tweet) 
+          = button_to 'いいねを取り消す', tweet_like_path(@tweet), method: :delete 
+        - else 
+          = button_to 'いいね', tweet_likes_path(@tweet) 
+
+        %h2
+          いいねしたユーザー
+          - @tweet.liked_users.each do |user| 
+            %li
+              = user.name
+
+        = link_to tweets_path do
+          ホームへ戻る
