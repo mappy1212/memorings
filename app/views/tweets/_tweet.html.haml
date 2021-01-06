@@ -1,7 +1,7 @@
 .twitter__contents 
   .twitter__block
     %figure
-      = image_tag 'hero.jpg', class: 'icon-photo'
+      = image_tag tweet.user.image, class: 'icon-photo'
     .twitter__block-text
       .name
         = link_to user_path(tweet.user.id), class: "top_bar__menu--diary" do
