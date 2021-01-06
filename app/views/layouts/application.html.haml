@@ -23,7 +23,7 @@
         - if user_signed_in?
           .top_bar__user
             .top_bar__user--icon
-              = image_tag 'hero.jpg', class: 'icon-photo'
+              = image_tag current_user.image, class: 'icon-photo'
             .top_bar__user--name
               = current_user.name
           = link_to "ログアウト", destroy_user_session_path, method: :delete
