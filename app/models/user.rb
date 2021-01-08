@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :comments
   has_many :likes, dependent: :destroy
   has_many :liked_tweets, through: :likes, source: :tweet
+  has_many :chats,dependent: :destroy
   
   validates :name, presence: true, uniqueness: true
   validates :nickname, presence: true, uniqueness: true

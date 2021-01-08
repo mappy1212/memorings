@@ -1,0 +1,27 @@
+%h2
+  = @partner.name
+#chats
+  - @chats.each do |chat|
+    - if chat.user_id == current_user.id
+      .mycomment
+        %p
+          = chat.sentence      
+    - else
+      .fukidasi
+        .faceicon
+          = image_tag @partner.image, class: 'icon-photo'
+        .chatting
+          .says
+            %p
+              = chat.sentence
+%div#send-form
+  = form_with model: @chat, local: true do |f|
+    = f.text_field :sentence, class: 'sentence', placeholder: 'type a message'
+    = f.text_field :user_id, type: "hidden", value: current_user.id
+    = f.text_field :partner_id, type: "hidden", value: @partner.id
+    = f.submit 'Send', class: 'send'
+
+
+//<%=link_to("ログアウトする","/users/sign_out",method: :delete)%>
+
+ 

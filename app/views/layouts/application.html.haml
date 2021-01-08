@@ -14,9 +14,9 @@
         MemoRing
       .top_bar__menu
         - if user_signed_in?
-          =link_to tweets_path, class: "top_bar__menu--timeline" do
+          = link_to tweets_path, class: "top_bar__menu--timeline" do
             TimeLine
-          %a{ href: '', class: 'top_bar__menu--chat' }
+          = link_to chats_path, class: "top_bar__menu--chat" do
             Chat
           = link_to user_path(current_user.id), class: "top_bar__menu--diary" do
             Diary
