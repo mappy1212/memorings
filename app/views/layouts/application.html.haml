@@ -6,7 +6,7 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application'
   %body
     = render 'layouts/notifications'
     .top_bar 
@@ -16,7 +16,7 @@
         - if user_signed_in?
           = link_to tweets_path, class: "top_bar__menu--timeline" do
             TimeLine
-          = link_to chats_path, class: "top_bar__menu--chat" do
+          = link_to chats_index_path, class: "top_bar__menu--chat" do
             Chat
           = link_to user_path(current_user.id), class: "top_bar__menu--diary" do
             Diary

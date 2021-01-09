@@ -15,7 +15,16 @@ class ChatsController < ApplicationController
   end
 
   def create
-    Chat.create(chat_params)
+    @chat = Chat.new(chat_params)
+    if @chat.save
+      respond_to do |format|
+        format.json
+      end
+    else
+      @chats = chats.includes(:user)
+      flash.now[:alert] = 'メッセージを入力してください。'
+      render :show
+    end
   end
 
   private
