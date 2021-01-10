@@ -1,19 +1,21 @@
+= javascript_include_tag 'autoReload'
 %h2
   = @partner.name
 #chats
   - @chats.each do |chat|
-    - if chat.user_id == current_user.id
-      .mycomment
-        %p
-          = chat.sentence      
-    - else
-      .fukidasi
-        .faceicon
-          = image_tag @partner.image, class: 'icon-photo'
-        .chatting
-          .says
-            %p
-              = chat.sentence
+    .ChatBox{data: {chat: {id: chat.id}}}
+      - if chat.user_id == current_user.id
+        .mycomment
+          %p
+            = chat.sentence      
+      - else
+        .fukidasi
+          .faceicon
+            = image_tag @partner.image, class: 'icon-photo'
+          .chatting
+            .says
+              %p
+                = chat.sentence
 %div#send-form
   = form_with model: @chat, html: {class: "form"}, local: true do |f|
     = f.text_field :sentence, class: 'sentence', placeholder: 'type a message'

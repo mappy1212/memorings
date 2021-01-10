@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_06_145438) do
+ActiveRecord::Schema.define(version: 2021_01_09_164914) do
 
   create_table "chats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 2021_01_06_145438) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "image"
     t.string "nickname"
+    t.string "occupation"
+    t.string "profile"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

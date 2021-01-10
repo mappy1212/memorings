@@ -1,10 +1,12 @@
 $(function(){
   function buildHTML(chat){
     let html =
-      `<div class="mycomment">
-        <p>
-          ${chat.sentence}
-        </p>
+      `<div class="ChatBox" data-chat-id=${chat.id}>
+        <div class="mycomment">
+          <p>
+            ${chat.sentence}
+          </p>
+        </div>
       </div>`
     return html;
   }
