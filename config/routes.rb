@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   root "tweets#index"
   resources :users, only: [:index, :show, :edit, :update]
   resources :chats
+  namespace :api do
+    resources :chats, only: :show, defaults: { format: 'json' }
+  end
   resources :tweets do
     resources :likes, only: [:create, :destroy]
     resources :comments, only: :create

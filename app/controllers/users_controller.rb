@@ -3,6 +3,10 @@ class UsersController < ApplicationController
   def show
     user = User.find(params[:id])
     @name = user.name
+    @id = user.id
+    @image = user.image
+    @occupation = user.occupation
+    @profile = user.profile
     @tweets = user.tweets.order("created_at DESC")
   end
   
@@ -20,6 +24,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :image, :nickname, :occupation, :profile, :email)
   end
 end

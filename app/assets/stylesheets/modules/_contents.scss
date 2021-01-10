@@ -138,7 +138,9 @@ $baseColor:   #58aeed; //ベースカラー
 
           .name {
             font-weight: bold;
-
+            .top_bar__menu--diary{
+              text-decoration: none;
+            }
             .name_reply {
               color: #8a9aa4;
               margin-left: 10px;
@@ -177,6 +179,7 @@ $baseColor:   #58aeed; //ベースカラー
           height: 5vh;
           .comment-btn{
             display: flex;
+            margin-left:50px;
             .heart{
               color:red
             }
