@@ -2,14 +2,17 @@
   .profile-card
     .profile-card__inner
     .profile-thumb
-      = image_tag @image
+      - if @image
+        = image_tag @image
     .profile-content
       %span.profile-name
         = @name
-      %span.profile-job
-        = @occupation
-      %span.profile-intro
-        = @profile
+      - if @occupation
+        %span.profile-job
+          = @occupation
+      - if @profile
+        %span.profile-intro
+          = @profile
     - if current_user.id != @id
       .DM
         = link_to "/chats/#{@id}", class: 'dm' do

@@ -11,7 +11,11 @@
     = render 'layouts/notifications'
     .top_bar 
       .top_bar__memoring
-        MemoRing
+        %span
+          .neon.flash
+            Memorings
+            %span
+              Memorings
       .top_bar__menu
         - if user_signed_in?
           = link_to tweets_path, class: "top_bar__menu--timeline" do

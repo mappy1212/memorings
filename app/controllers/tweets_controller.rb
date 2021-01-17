@@ -5,6 +5,7 @@ class TweetsController < ApplicationController
   
   def index
     @tweets = Tweet.includes(:user).order("created_at DESC")
+    @tweet = Tweet.new
   end
 
   def show
@@ -14,12 +15,10 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
   end
 
-  def new
-    @tweet = Tweet.new
-  end
 
   def create
     Tweet.create(tweet_params)
+    redirect_to root_path
   end
 
   def destroy

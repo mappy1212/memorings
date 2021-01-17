@@ -28,9 +28,10 @@ $(function(){
   let reloadChats = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     let last_chat_id = $('.ChatBox:last').data("chat-id") || 0;
+    let chat_id = window.location.pathname.split("/")[2]
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
-      url: "#{chat.partner_id]/api/chats",
+      url: `/api/chats/${chat_id}`,
       //ルーティングで設定した通りhttpメソッドをgetに指定
       type: 'get',
       dataType: 'json',
@@ -55,5 +56,5 @@ $(function(){
       alert('リロードのところ');
     });
   };
-  //setInterval(reloadChats, 7000);
+  setInterval(reloadChats, 7000);
 });

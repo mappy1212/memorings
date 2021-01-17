@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @image = user.image
     @occupation = user.occupation
     @profile = user.profile
-    @tweets = user.tweets.order("created_at DESC")
+    @tweets = user.tweets.order("created_at DESC").group_by{|tweet| tweet.created_at.to_date}.values
   end
   
   def edit
