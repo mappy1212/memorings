@@ -147,10 +147,40 @@
 }
 
 .side_bar{
+  background-image: image-url('20130528-P5280227_TP_V4.jpg');
+  background-size:cover;
   height: 90vh;
   width: 25vw;
-  background-color:#008080;
+  
+  .contents{
+    border: 3px solid #57C3E9;
+    border-radius: 20px;
+    .container_tweet{
+      text-align: center;
+      margin-top: 20px;
+      color:white;
+    }
+    .form-contents__text{
+      margin: 15px;
+      .text{
+        text-align: center;
+
+      }
+      .hidden{
+        display: none;
+      }
+    }
+    .send{
+      background-color: #57C3E9;
+      border: none;
+      border-radius: 20px;
+      width: 15vw;
+      width: 6vw;
+    margin-bottom: 10px;
+    }
+  }
 }
+
 
 .tweet_index{
   height: 90vh;
@@ -192,4 +222,32 @@
 
    }
   }
+}
+
+.neon {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: 1.5px skyblue;
+  text-shadow: 0 0 50px rgba(0,255,0,.5);
+}
+.neon span {
+  position: absolute;
+  top: 4%;
+  left: 3%;
+  opacity: .3;
+}
+.flash {
+  animation: flash-anime 3s linear infinite;
+}
+@keyframes flash-anime {
+  0%   {opacity: 1;}
+  50%  {opacity: 1;}
+  51%  {opacity: 0.3;}
+  52%  {opacity: 1;}
+  75% {opacity: 1;}
+  76% {opacity: 0.6;}
+  77% {opacity: 1;}
+  78% {opacity: 0.3;}
+  79% {opacity: 1;}
 }

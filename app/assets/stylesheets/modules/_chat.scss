@@ -1,17 +1,59 @@
+.room-name{
+  background-color:  #253141;
+  height: 45px;
+  margin-top: 20px;
+  max-width: 450px;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  margin:20px auto 0 auto ;
+}
 .rooms{
   margin:0 auto;
   background-color:#fdfdfd;
-  border: 2px solid #eee;
   padding:1em 2em;
+  width: 450px;
+  .chat-scroll{
+    overflow: scroll;
+    height: calc(60vh + 50px);
+    border: 1px solid navy;
+    .friend-name{
+      display: block;
+      text-align: center;
+      padding: 20px;
+      text-decoration: none;
+      border: 1px solid #253141;
+      color:  #253141;
+    }
+  }
 }
 /************************************
 ** チャットの吹き出し
 ************************************/
 
+.chat-name{
+  max-width: 450px;
+  margin: auto;
+  background-color:  #253141;
+  height: 45px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .back{
+    color: white;
+  }
+  &__user{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+  }
+}
+
 #chats{
   padding: 20px 10px;
   max-width: 450px;
-  margin: 15px auto;
+  margin: 0 auto;
   text-align: right;
   font-size: 14px;
   background: #7da4cd;
@@ -87,7 +129,28 @@
 /************************************
 ** 送信フォーム
 ************************************/
-#send-form{
-  text-align:center;
-  margin-bottom:200px;
+.chat-form{
+  max-width: 450px;
+  margin: auto;
+  background-color:  #253141;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  #send-form{
+    text-align:center;
+    .sentence{
+      height: 40px;
+      text-align: center;
+      border: none;
+      width: 300px;
+      border-radius: 3px;
+    }
+    .send{
+      height: 40px;
+      border: none;
+      padding: 0 10px;
+      border-radius: 3px;
+    }
+  }
 }

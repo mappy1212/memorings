@@ -1,8 +1,12 @@
+.room-name
+  トーク一覧
 %table.rooms
   %tbody
     %tr
       %td
-        - @chat_partners.each do |chat_partner|
-          = link_to "#{chat_partner.name}さんとのトークルーム","/chats/#{chat_partner.id}"
+        .chat-scroll
+          - @chat_partners.each do |chat_partner|
+            = link_to "#{chat_partner.name}さんとのトークルーム","/chats/#{chat_partner.id}", class:"friend-name"
+            
 //= link_to("ログインページへ","/")
 //= link_to("ログアウトする","/users/sign_out",method: :delete)

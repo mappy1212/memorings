@@ -14,7 +14,7 @@
       .text
         - if tweet.text.present?
           %p.Tweet__text
-            = tweet.text
+            = simple_format(tweet.text)
         = image_tag tweet.image.url, class: 'tweet__image' if tweet.image.present?
 
     .menu
