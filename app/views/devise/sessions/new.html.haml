@@ -1,8 +1,6 @@
 .AccountPage
   .AccountPage__title
-    %h2 Log in
-    %h5 登録しているユーザーでログイン
-    = render "devise/shared/links"
+    %h2 あなたの「素敵」を「もっと素敵」に
   .AccountPage__form
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .FormField
@@ -18,3 +16,6 @@
             = f.password_field :password, autocomplete: "off"
         .actions
           = f.submit "Log in", class: 'Button UserButton'
+  %h5 新規アカウントの作成
+  = render "devise/shared/links"
+  

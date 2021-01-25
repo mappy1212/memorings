@@ -1,29 +1,47 @@
 .AccountPage {
-  width: 980px;
+  width: 500px;
   margin: 60px auto;
   padding: 60px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
-  display: flex;
   justify-content: space-between;
+  background-image: image-url('sparkler-918836_1280.jpg');
+  background-size:cover;
+  text-align: center;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
 }
+.AccountPage:before{
+  content: '';
+  background: inherit;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+}
+
 .AccountPage__title {
-  width: 50%;
   font-size: 14px;
   font-weight: 200;
 
   h2 {
     margin-bottom: 10px;
     letter-spacing: 3px;
-    font-size: 40px;
-    &:after {
-      content: "";
-      display: block;
-      width: 60px;
-      margin-top: 5px;
-      border-bottom: 1px solid #38aef0;
-    }
+    font-size: 19px;
+    color: white;
+    
+  }
+  h5{
+    color: white;
   }
 
   .Button {
@@ -34,11 +52,13 @@
 }
 
 .AccountPage__form {
-  width: 50%;
+  display: flex;
+  justify-content: center;
 }
 
 .FormField {
   margin-bottom: 10px;
+  color: white;
   &__label--normal {
     padding: 10px 0;
     letter-spacing: 1px;
@@ -54,6 +74,7 @@
     }
   }
   &__input--normal {
+    width: 300px;
     input {
       box-sizing: border-box;
       width: 100%;
@@ -118,6 +139,23 @@
     padding: 0;
     font-size: 13px;
   }
+}
+h5{
+  color: white;
+  padding-top: 50px;
+}
+.button{
+  color: white;
+  border: 1px solid white;
+  height: 50px;
+  display: inline-block;
+  height: 50px;
+  padding: 0 22px;
+  line-height: 50px;
+  letter-spacing: 1px;
+  text-align: center;
+  border-radius: 2px;
+  text-decoration: none;
 }
 
 .profile-card{
@@ -194,7 +232,6 @@
 
 
 ol {
-  border: solid 2px #38aef0;
   padding: 0.5em 1em 0.5em 2.3em;
   position: relative;
 }
@@ -233,8 +270,35 @@ ol li:before {
   border-radius: 5px;
   height: 30px;
   font-size: 20px;
+  border: none;
 }
 
 .Tweet__image{
   height: 300px;
+}
+
+
+.profile-edit{
+  display: block;
+  border: 1px solid;
+  width: 200px;
+  margin: 30px auto;
+  padding: 10px;
+  background-color: skyblue;
+  color: white;
+  text-decoration: none;
+  color: black;
+  border: none;
+}
+.logout{
+  display: block;
+  border: 1px solid;
+  width: 200px;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: skyblue;
+  color: white;
+  text-decoration: none;
+  color: black;
+  border: none;
 }

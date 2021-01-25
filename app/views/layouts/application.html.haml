@@ -27,13 +27,10 @@
         - if user_signed_in?
           .top_bar__user
             .top_bar__user--icon
-              - if current_user.image
-                = image_tag current_user.image, class: 'icon-photo'
+              - if current_user.image.url
+                = image_tag current_user.image.url, class: 'icon-photo'
             .top_bar__user--name
               = current_user.name
-          = link_to "ログアウト", destroy_user_session_path, method: :delete
-          = icon('fas', 'user-slash')
-          = link_to "編集", edit_user_path(current_user.id), method: :get
       .menu-trigger
         %span
         %span
