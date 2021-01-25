@@ -2,8 +2,8 @@
   .profile-card
     .profile-card__inner
     .profile-thumb
-      - if @image
-        = image_tag @image
+      - if @image.url
+        = image_tag @image.url
     .profile-content
       %span.profile-name
         = @name
@@ -18,3 +18,10 @@
         = link_to "/chats/#{@id}", class: 'dm' do
           = icon('far', 'envelope', class: 'mail')
           DMへ
+    - if current_user.id == @id
+      .setting
+        = link_to edit_user_path(current_user.id), class: "profile-edit", method: :get do
+          プロフィール編集
+        = link_to  destroy_user_session_path, class: "logout", method: :delete do
+          ログアウト
+          = icon('fas', 'user-slash')

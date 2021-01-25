@@ -40,8 +40,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   .back{
     color: white;
+    position: absolute;
+    left: 10px;
+    top: 14px;
+
   }
   &__user{
     text-align: center;

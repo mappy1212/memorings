@@ -1,8 +1,8 @@
 .twitter__contents 
   .twitter__block
     %figure
-      - if tweet.user.image
-        = image_tag tweet.user.image, class: 'icon-photo'
+      - if tweet.user.image.url
+        = image_tag tweet.user.image.url, class: 'icon-photo'
     .twitter__block-text
       .name
         = link_to user_path(tweet.user.id), class: "top_bar__menu--diary" do

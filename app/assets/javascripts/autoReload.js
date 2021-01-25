@@ -36,7 +36,7 @@ $(function(){
       type: 'get',
       dataType: 'json',
       //dataオプションでリクエストに値を含める
-      data: {id: last_chat_id}
+      data: {last_chat_id: last_chat_id }
     })
     .done(function(chats) {
       // 更新するメッセージがなかった場合は.doneの後の処理が動かないようにする

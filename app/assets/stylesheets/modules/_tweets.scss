@@ -72,6 +72,11 @@
       background: #67c5ff;
       color: white;
     }
+    .app_show{
+      text-align: center;
+      font-size: 30px;
+      margin-top: 20px;
+    }
   }
   .top_bar__user{
     width: 265px;
@@ -149,8 +154,14 @@
 .side_bar{
   background-image: image-url('20130528-P5280227_TP_V4.jpg');
   background-size:cover;
+  width: 100%;
+  height: 350px;
+  text-align: center;
   height: 90vh;
   width: 25vw;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
   
   .contents{
     border: 3px solid #57C3E9;
@@ -180,6 +191,22 @@
     }
   }
 }
+.side_bar:before{
+  content: '';
+  background: inherit;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+}
+
 
 
 .tweet_index{
@@ -251,3 +278,7 @@
   78% {opacity: 0.3;}
   79% {opacity: 1;}
 }
+
+
+
+
