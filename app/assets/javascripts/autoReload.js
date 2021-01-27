@@ -1,29 +1,34 @@
 $(function(){
   function buildHTML(chat){
-    let html =
-      `<div class="ChatBox" data-chat-id=${chat.id}>
-        <%if chat.user_id==current_user.id%>
+    if ( chat.user_id == chat.current_user_id ) {
+      let html =
+        `<div class="ChatBox" data-chat-id=${chat.id}>
           <div class="mycomment">
             <p>
               ${chat.sentence}
             </p>
           </div>
-        <%else%>
-          <div class="fukidasi">
-            <div class="faceicon">
-              = image_tag ${partner.image} class: 'icon-photo'
-            </div>
-            <div class="chatting">
-              <div class="says">
-                <p>
-                  ${chat.sentence}
-                </p>
-              </div>
+        </div>`
+      return html;
+    } else {
+      let html =
+      `<div class="ChatBox" data-chat-id=${chat.id}>
+        <div class="fukidasi">
+          <div class="faceicon">
+            <img class="icon-photo" src="${chat.image}">
+          </div>
+          <div class="chatting">
+            <div class="says">
+              <p>
+                ${chat.sentence}
+              </p>
             </div>
           </div>
-        <%end%>
+          </div>
+          </div>
       </div>`
-    return html;
+      return html;
+    };
   }
   let reloadChats = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得

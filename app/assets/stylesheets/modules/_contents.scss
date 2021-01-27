@@ -271,3 +271,26 @@ h3{
   margin-top: 40px;
   font-size: 20px;
 }
+
+.content{
+  .edit-text{
+    width: 300px;
+    height: 50px;
+  }
+  .hidden{
+    display: none;
+
+  }
+  .send{
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: lightcoral;
+    border: none;
+    margin-bottom:30px ;
+  }
+  h{
+  font-size: 15px;
+  }
+}
