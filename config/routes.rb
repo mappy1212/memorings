@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   get 'chats/index'
   get 'chats/show'
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+  devise_scope :user do
+    get 'guest', to: 'users/sessions#new'
+  end
   
   root "tweets#index"
   resources :users, only: [:index, :show, :edit, :update]
