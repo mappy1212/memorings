@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: memorings_production
-  username: memorings
-  password: <%= ENV['MEMORINGS_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
