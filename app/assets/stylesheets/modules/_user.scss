@@ -161,7 +161,7 @@ h5{
 .profile-card{
   width: 100%;
   position: relative;
-  background: #fff; /*背景の色*/
+  background: #fff; 
   box-shadow: 0px 1px 3px rgba(0,0,0,.18);
   overflow: hidden;
 }
@@ -239,7 +239,7 @@ ol {
 ol li {
   line-height: 1.5;
   padding: 0.5em 0;
-  list-style-type: none!important;/*ポチ消す*/
+  list-style-type: none!important;
 }
 
 li{
@@ -251,8 +251,8 @@ ol li:before {
   font-family: "Font Awesome 5 Free";
   content: "\f00c";
   position: absolute;
-  left : 1em; /*左端からのアイコンまで*/
-  color: #38aef0; /*アイコン色*/
+  left : 1em; 
+  color: #38aef0; 
 }
 
 .check{
@@ -263,8 +263,6 @@ ol li:before {
 
 .tweet_day{
   border: 1px solid;
-    /* width: 100px; */
-    /* width: 87px; */
   text-align: center;
   background-color: lightskyblue;
   border-radius: 5px;

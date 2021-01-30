@@ -1,42 +1,40 @@
 @charset "UTF-8";
 
-/*/////////////////////////////////////////////////
-//twitter風チャット画面(会話方式)を記事に表示する方法
-/////////////////////////////////////////////////*/
 
-// color
-$baseColor:   #58aeed; //ベースカラー
 
-/*///////////////////////////////////////////////*/
+
+$baseColor:   #58aeed; 
+
+
 
 
 .search-form{
-  position:relative;/*フォームの相対位置*/	
-  max-width:270px;/*フォームのサイズ*/
-  margin-bottom:15px;/*フォームの下に余白*/	
+  position:relative;
+  max-width:270px;
+  margin-bottom:15px;
   height: 4vh;
   .search-input{
-    position:absolute;/*フォームの絶対位置*/	
+    position:absolute;
     top:0; 	
-    outline:0;/*クリック時の青い枠線消す*/	
-    height:50px;/*検索ボックスの高さ*/	
-    padding:0 10px;/*テキスト位置調整*/	 
-    border-radius:2px 0 0 2px;/*検索ボックスの角を丸める*/		
-    background:#eee;/*検索ボックスの背景カラー*/	
+    outline:0;
+    height:50px;
+    padding:0 10px;
+    border-radius:2px 0 0 2px;
+    background:#eee;
     text-align: center;
   }
   .search-btn{
-    width:70px;/*検索ボタンの横幅*/ 
-    height:50px;/*検索ボタンの縦幅*/ 
-    position:absolute;/*検索ボタンの絶対位置*/  
-    left:168px;/*検索ボタンの位置調整*/  
+    width:70px;
+    height:50px;
+    position:absolute;
+    left:168px;
     top:0;
-    border-radius:0 2px 2px 0;/*検索ボタンの角を丸める*/ 
-    background:#7fbfff;/*検索ボタンの背景カラー*/ 
-    border:none;/*検索ボタンの枠線を消す*/ 
-    color:#fff;/*検索ボタンのテキストカラー*/ 
-    font-weight:bold;/*検索ボタンのテキスト太字*/ 
-    font-size:16px;/*検索ボタンのフォントサイズ*/ 
+    border-radius:0 2px 2px 0;
+    background:#7fbfff;
+    border:none; 
+    color:#fff;
+    font-weight:bold;
+    font-size:16px;
   }
   .search-btn:hover{
     color:#666;
@@ -53,8 +51,6 @@ $baseColor:   #58aeed; //ベースカラー
   padding:0;
   background: #ffffff;
   overflow: hidden;
-  //max-width: 400px;
-  //margin: 20px auto;
   font-size: 80%;
   border: solid 1px #eeeeee;
 
@@ -62,7 +58,7 @@ $baseColor:   #58aeed; //ベースカラー
     color: $baseColor;
   }
 
-  /* タイトル部分 */
+  
   .twitter__title {
     height: 6vh;
     background: $baseColor;
@@ -88,7 +84,7 @@ $baseColor:   #58aeed; //ベースカラー
     }
   }
 
-  /* タイムライン部分 */
+  
   .tweet_all{
     height: 80vh;
     overflow: scroll;
@@ -114,23 +110,18 @@ $baseColor:   #58aeed; //ベースカラー
         &:last-child {
           border-bottom: solid 0px;
         }
-
-        /* アイコン画像 */
         figure {
           width: 50px;
           padding: 0;
           margin: 0;
           float: left;
           width: 50px;
-
-          /* 正方形を用意 */
           img{
             border-radius: 50%;
             width: 50px;
             height: 50px;
           }
         }
-        /* コメントエリア */
         .twitter__block-text {
           margin: 0;
           position: relative;
