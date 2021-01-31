@@ -1,24 +1,25 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Memorings
+## 概要
+#### これは日記型SNSです。
+#### その日あったことを投稿したものが自動的に日記として保存されるものになっています。
+#### 今はレスポンシブ対応はしていません.  
+## 主な使用技術  
+#### ・Ruby 2.6.5
+#### ・Ruby on Rails 6.0.3.4
+#### ・PUMA
+#### ・haml-rails (>= 1.0, <= 2.0.1)
+#### ・jquery-rails
+#### ・AWS
+  #### ・EC2
+  #### ・S3
+#### ・Capistrano3  
+## 機能一覧  
+#### ・ユーザー登録、ログイン機能(devise)
+#### ・投稿機能
+####   ・文字だけ、画像だけ、あるいは両方同時に投稿可能
+####   ・投稿の編集機能
+#### ・いいね機能
+#### ・コメント機能
+#### ・チャット機能
+#### ・日記機能(投稿が自動的に日記になります)
+#### (今のところフォロー機能は実装していないので投稿のタイムラインやチャットでは登録者全員が表示されます)
